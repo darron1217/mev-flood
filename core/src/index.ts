@@ -17,7 +17,8 @@ const ethersV6 = require('ethersV6')
 const flashbotsUrls = {
     1: "https://relay.flashbots.net",
     5: "https://relay-goerli.flashbots.net",
-    11155111: "https://relay-sepolia.flashbots.net"
+    11155111: "https://relay-sepolia.flashbots.net",
+    32382: "https://localhost"
 } // TODO: make a PR to flashbots/ethers-provider-bundle to integrate network detection; users shouldn't need to do this
 
 const getFlashbotsUrl = (chainId: number): string => {
