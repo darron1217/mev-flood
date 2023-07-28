@@ -30,6 +30,7 @@ export const createSwaps = async (options: SwapOptions, provider: providers.Json
             provider.network.chainId,
             options.gasFees
         )
+        console.log(`[Gas config] gasLimit: ${signedSwap.tx.gasLimit} gasPrice: ${signedSwap.tx.gasPrice} maxFeePerGas: ${signedSwap.tx.maxFeePerGas} maxPriorityFeePerGas: ${signedSwap.tx.maxPriorityFeePerGas}`)
         signedSwaps.push(signedSwap)
     }
     return {signedSwaps, swapParams}
