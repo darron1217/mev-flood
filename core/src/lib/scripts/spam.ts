@@ -19,6 +19,7 @@ export const spam = async (
     }) => {
     // get feedata before tx
     const feeData = await wallet.provider.getFeeData()
+    console.log(`[Fee data] gasPrice: ${feeData.gasPrice} / lastBaseFeePerGas: ${feeData.lastBaseFeePerGas} / maxFeePerGas: ${feeData.maxFeePerGas} / maxPriorityFeePerGas: ${feeData.maxPriorityFeePerGas}`)
     // calling generateSwaps with only one wallet will produce a bundle with only one tx
     const txBundles = await Promise.all(Array(params.txsPerBundle).fill(0).map((_, idx) => mevFlood.generateSwaps({
         gasFees: {
