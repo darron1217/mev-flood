@@ -333,6 +333,7 @@ export const signSwap = async (
         {
             from: sender.address,
             gasLimit: 150000,
+            gasPrice: gasFees?.gasPrice,
             chainId,
             maxFeePerGas: (gasFees?.maxFeePerGas || GWEI.mul(80)).add(gasFees?.gasTip || 0),
             maxPriorityFeePerGas: (gasFees?.maxPriorityFeePerGas || GWEI.mul(5)).add(gasFees?.gasTip || 0)

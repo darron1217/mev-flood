@@ -13,6 +13,7 @@ type TransactionRequest = providers.TransactionRequest
 
 export type GasFeeOptions = {
     gasTip?: BigNumber,
+    gasPrice?: BigNumber,
     maxFeePerGas?: BigNumber,
     maxPriorityFeePerGas?: BigNumber,
 }

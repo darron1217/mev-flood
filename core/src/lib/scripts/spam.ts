@@ -23,6 +23,7 @@ export const spam = async (
     const txBundles = await Promise.all(Array(params.txsPerBundle).fill(0).map((_, idx) => mevFlood.generateSwaps({
         gasFees: {
             gasTip: undefined,
+            gasPrice: feeData.gasPrice || undefined,
             maxFeePerGas: feeData.maxFeePerGas || undefined,
             maxPriorityFeePerGas: feeData.maxPriorityFeePerGas || undefined,
         }
